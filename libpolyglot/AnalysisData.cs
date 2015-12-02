@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿// <copyright file="AnalysisData.cs" company="Nate Barbettini">
+// Copyright (c) 2015 Nate Barbettini. Licensed under MIT.
+// </copyright>
 
 namespace libpolyglot
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     internal sealed class AnalysisData
     {
         private readonly IList<string> referencedAssemblyNames;

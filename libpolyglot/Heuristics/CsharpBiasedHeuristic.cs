@@ -1,4 +1,8 @@
-﻿namespace libpolyglot.Heuristics
+﻿// <copyright file="CsharpBiasedHeuristic.cs" company="Nate Barbettini">
+// Copyright (c) 2015 Nate Barbettini. Licensed under MIT.
+// </copyright>
+
+namespace libpolyglot.Heuristics
 {
     internal sealed class CsharpBiasedHeuristic : AbstractHeuristic
     {
