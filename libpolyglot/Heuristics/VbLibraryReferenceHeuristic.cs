@@ -7,6 +7,6 @@ namespace libpolyglot.Heuristics
         public override Language ForLanguage => Language.Vb;
 
         public override bool GetResult(AnalysisData data)
-            => this.data.ReferencedAssemblyNames.Contains("Microsoft.VisualBasic");
+            => data.ReferencedAssemblyNames.Contains("Microsoft.VisualBasic");
     }
 }

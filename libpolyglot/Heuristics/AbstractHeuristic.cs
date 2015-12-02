@@ -2,8 +2,6 @@
 {
     internal abstract class AbstractHeuristic
     {
-        protected readonly AnalysisData data;
-
         public AbstractHeuristic()
         {
         }

@@ -5,6 +5,6 @@
         public override Language ForLanguage => Language.CSharp;
 
         public override bool GetResult(AnalysisData data)
-            => this.data.ReferencedAssemblyNames.Contains("Microsoft.CSharp");
+            => data.ReferencedAssemblyNames.Contains("Microsoft.CSharp");
     }
 }

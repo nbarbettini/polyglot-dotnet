@@ -7,6 +7,6 @@ namespace libpolyglot.Heuristics
         public override Language ForLanguage => Language.CSharp;
 
         public override bool GetResult(AnalysisData data)
-            => this.data.InternalTypeNames.Where(x => x.Contains("<>")).Any();
+            => data.InternalTypeNames.Where(x => x.Contains("<>")).Any();
     }
 }
