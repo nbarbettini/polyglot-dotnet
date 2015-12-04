@@ -18,6 +18,7 @@ namespace libpolyglot.Heuristics
                 {
                     typeof(VbHeuristics),
                     typeof(CsharpHeuristics),
+                    typeof(FsharpHeuristics),
                 }
                 .SelectMany(t => t.GetFields(BindingFlags.Public | BindingFlags.Static))
                 .Select(f => (IHeuristic)f.GetValue(null))

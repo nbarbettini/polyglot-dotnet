@@ -51,6 +51,7 @@
     <Compile Include="Heuristics\BooleanHeuristic.cs" />
     <Compile Include="AnalysisData.cs" />
     <Compile Include="AssemblyAnalyzer.cs" />
+    <Compile Include="Heuristics\FsharpHeuristics.cs" />
     <Compile Include="Heuristics\CsharpHeuristics.cs" />
     <Compile Include="Heuristics\HeuristicProvider.cs" />
     <Compile Include="Heuristics\HeuristicRunner.cs" />

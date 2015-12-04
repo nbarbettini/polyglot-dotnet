@@ -93,6 +93,9 @@
     <Content Include="TestAssemblies\EmptyCS.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TestAssemblies\EmptyFSharp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestAssemblies\EmptyVB.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
