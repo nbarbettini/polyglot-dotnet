@@ -19,6 +19,10 @@ namespace libpolyglot.Heuristics
             new BooleanHeuristic(nameof(AnonymousTypeCompilerName), Language.CSharp,
                 data => data.InternalTypeNames.Any(t => t.Contains("<>f__")));
 
+        public static IHeuristic DynamicTypeCompilerName =
+            new BooleanHeuristic(nameof(DynamicTypeCompilerName), Language.CSharp,
+                data => data.InternalTypeNames.Any(t => t.Contains("<>o__")));
+
         public static IHeuristic StateMachineCompilerName =
             new BooleanHeuristic(nameof(StateMachineCompilerName), Language.CSharp,
                 data => data.InternalTypeNames.Any(t => t.Contains("+<") && t.Contains(">d__")));
