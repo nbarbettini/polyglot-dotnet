@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using Shouldly;
 using Xunit;
@@ -21,7 +22,7 @@ namespace libpolyglot.Tests
         [MemberData(nameof(TestAssemblies))]
         public void When_analyzing(string file, Language expected)
         {
-            var assembly = Assembly.LoadFrom($"TestAssemblies\\{file}");
+            var assembly = Assembly.LoadFrom($"TestAssemblies{Path.DirectorySeparatorChar}{file}");
             var analyzer = new AssemblyAnalyzer(assembly);
 
             analyzer.DetectedLanguage.ShouldBe(expected);
