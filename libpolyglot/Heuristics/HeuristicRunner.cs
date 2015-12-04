@@ -9,31 +9,27 @@ namespace libpolyglot.Heuristics
 
     internal sealed class HeuristicRunner
     {
-        private readonly List<AbstractHeuristic> heuristics;
+        private readonly List<IHeuristic> heuristics;
 
-        public HeuristicRunner(IEnumerable<AbstractHeuristic> heuristics)
+        public HeuristicRunner(IEnumerable<IHeuristic> heuristics)
         {
             this.heuristics = heuristics.ToList();
         }
 
-        public IDictionary<Language, double> GetResult(AnalysisData data)
+        public IEnumerable<AnalysisResult> GetResults(AnalysisData data)
         {
-            var results = new Dictionary<Language, double>();
-
-            var supportedLanguages = this.heuristics
-                .GroupBy(h => h.ForLanguage);
-            foreach (var lang in supportedLanguages)
-            {
-                double trueCount = this.Run(lang, data);
-                results.Add(lang.Key, trueCount / lang.Count());
-            }
-
-            return results;
+            return this.heuristics
+                .GroupBy(h => h.Language)
+                .Select(group => new { language = group.Key, matches = Run(group, data), groupCount = group.Count() })
+                .Select(x => new AnalysisResult(x.language, x.matches, CalculateScore(this.heuristics.Count, x.groupCount, x.matches.Count())));
         }
 
-        private int Run(IEnumerable<AbstractHeuristic> heuristics, AnalysisData data)
+        private static IEnumerable<string> Run(IEnumerable<IHeuristic> heuristics, AnalysisData data)
             => heuristics
-                .Select(h => h.GetResult(data))
-                .Count(r => r == true);
+                .Where(x => x.GetResult(data) == true)
+                .Select(x => x.Name);
+
+        private static double CalculateScore(int totalHeuristics, int groupHeuristics, int matches)
+            => matches / (double)groupHeuristics;
     }
 }

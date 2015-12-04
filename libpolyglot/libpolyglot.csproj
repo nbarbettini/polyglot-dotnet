@@ -47,16 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Heuristics\AbstractHeuristic.cs" />
+    <Compile Include="AnalysisResult.cs" />
+    <Compile Include="Heuristics\BooleanHeuristic.cs" />
     <Compile Include="AnalysisData.cs" />
     <Compile Include="AssemblyAnalyzer.cs" />
-    <Compile Include="Heuristics\CsharpBiasedHeuristic.cs" />
-    <Compile Include="Heuristics\CsharpCompilerGeneratedNamesHeuristic.cs" />
+    <Compile Include="Heuristics\CsharpHeuristics.cs" />
+    <Compile Include="Heuristics\HeuristicProvider.cs" />
     <Compile Include="Heuristics\HeuristicRunner.cs" />
-    <Compile Include="Heuristics\VbCompilerGeneratedNamesHeuristic.cs" />
-    <Compile Include="Heuristics\CsharpLibraryReferenceHeuristic.cs" />
-    <Compile Include="Heuristics\VbMyTypesHeuristic.cs" />
-    <Compile Include="Heuristics\VbLibraryReferenceHeuristic.cs" />
+    <Compile Include="Heuristics\IHeuristic.cs" />
+    <Compile Include="Heuristics\VbHeuristics.cs" />
     <Compile Include="IAssemblyAnalyzer.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

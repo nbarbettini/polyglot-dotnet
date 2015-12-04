@@ -12,17 +12,8 @@ namespace libpolyglot
     /// <inheritdoc/>
     public sealed class AssemblyAnalyzer : IAssemblyAnalyzer
     {
-        private static readonly AbstractHeuristic[] DefaultHeuristics =
-        {
-            new CsharpBiasedHeuristic(),
-            new CsharpCompilerGeneratedNamesHeuristic(),
-            new CsharpLibraryReferenceHeuristic(),
-            new VbCompilerGeneratedNamesHeuristic(),
-            new VbLibraryReferenceHeuristic(),
-            new VbMyTypesHeuristic()
-        };
-
-        private readonly IDictionary<Language, double> results;
+        private static readonly Language DefaultLanguage = Language.CSharp;
+        private readonly List<AnalysisResult> results;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AssemblyAnalyzer"/> class based on the given assembly.
@@ -30,38 +21,33 @@ namespace libpolyglot
         /// <param name="assemblyToAnalyze">The assembly to analyze.</param>
         public AssemblyAnalyzer(Assembly assemblyToAnalyze)
         {
-            this.results = Analyze(assemblyToAnalyze);
+            this.results = Analyze(assemblyToAnalyze).ToList();
         }
 
         /// <inheritdoc/>
-        public IDictionary<Language, double> AllResults
-            => new Dictionary<Language, double>(this.results);
+        public IReadOnlyList<AnalysisResult> AllResults => this.results;
 
         /// <inheritdoc/>
-        public Language? DetectedLanguage
+        public Language DetectedLanguage => TopScore(this.results) ?? DefaultLanguage;
+
+        private static Language? TopScore(IList<AnalysisResult> source)
         {
-            get
+            if (source.All(x => x.Score == 0))
             {
-                if (!this.results.Any())
-                {
-                    return null;
-                }
-
-                return KeyByMaxValue(this.results);
+                return null;
             }
+
+            return source?.Aggregate((l, r) => l.Score > r.Score ? l : r).Language;
         }
 
-        private static Language KeyByMaxValue(IDictionary<Language, double> source)
-            => source.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
-
-        private static IDictionary<Language, double> Analyze(Assembly assembly)
+        private static IEnumerable<AnalysisResult> Analyze(Assembly assembly)
         {
             var analysisData = new AnalysisData(
                 assembly.GetReferencedAssemblies().Select(x => x.Name),
                 assembly.GetTypes().Select(t => t.FullName));
 
-            var runner = new HeuristicRunner(DefaultHeuristics);
-            return runner.GetResult(analysisData);
+            var runner = new HeuristicRunner(HeuristicProvider.GetAll());
+            return runner.GetResults(analysisData);
         }
     }
 }
