@@ -12,9 +12,12 @@ namespace libpolyglot.Tests
         {
             yield return new object[] { "EmptyVB.dll", Language.Vb };
             yield return new object[] { "EmptyCS.dll", Language.CSharp };
+            yield return new object[] { "EmptyCSMono.dll", Language.CSharp };
             yield return new object[] { "AnonymousAsyncVB.dll", Language.Vb };
             yield return new object[] { "AnonymousAsyncCS.dll", Language.CSharp };
+            yield return new object[] { "AnonymousAsyncCSMono.dll", Language.CSharp };
             yield return new object[] { "DynamicCS.dll", Language.CSharp };
+            yield return new object[] { "DynamicCSMono.dll", Language.CSharp };
             yield return new object[] { "EmptyFSharp.dll", Language.FSharp };
         }
 
