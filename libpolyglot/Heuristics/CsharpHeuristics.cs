@@ -9,6 +9,7 @@ namespace libpolyglot.Heuristics
 
 #pragma warning disable SA1401 // Fields must be private
 #pragma warning disable SA1117 // Parameters must be on same line or separate lines
+#pragma warning disable SA1202 // Public members must come before private members
 
     internal static class CsharpHeuristics
     {
@@ -35,5 +36,5 @@ namespace libpolyglot.Heuristics
 
 #pragma warning restore SA1401 // Fields must be private
 #pragma warning restore SA1117 // Parameters must be on same line or separate lines
-
+#pragma warning restore SA1202 // Public members must come before private members
 }

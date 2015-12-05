@@ -12,7 +12,6 @@ namespace libpolyglot
     /// <inheritdoc/>
     public sealed class AssemblyAnalyzer : IAssemblyAnalyzer
     {
-        private static readonly Language DefaultLanguage = Language.CSharp;
         private readonly List<AnalysisResult> results;
 
         /// <summary>
@@ -28,7 +27,7 @@ namespace libpolyglot
         public IReadOnlyList<AnalysisResult> AllResults => this.results;
 
         /// <inheritdoc/>
-        public Language DetectedLanguage => TopScore(this.results) ?? DefaultLanguage;
+        public Language? DetectedLanguage => TopScore(this.results);
 
         private static Language? TopScore(IList<AnalysisResult> source)
         {

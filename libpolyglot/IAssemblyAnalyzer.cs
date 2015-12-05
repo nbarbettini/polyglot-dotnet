@@ -15,7 +15,7 @@ namespace libpolyglot
         /// <summary>
         /// Gets the most likely source language.
         /// </summary>
-        Language DetectedLanguage { get; }
+        Language? DetectedLanguage { get; }
 
         /// <summary>
         /// Gets the entire list of heuristic results.
