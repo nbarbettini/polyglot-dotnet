@@ -1,0 +1,27 @@
+{
+  "authors": [ "Nate Barbettini" ],
+  "commands": {
+    "test": "xunit.runner.dnx"
+  },
+  "dependencies": {
+    "FluentAssertions": "4.2.2",
+    "Polyglot": "1.0.0-beta1",
+    "xunit": "2.1.0",
+    "xunit.runner.dnx": "2.1.0-rc1-build204"
+  },
+  "description": "DNX tests for Polygot",
+  "frameworks": {
+    "dnxcore50": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+      }
+    }
+  },
+  "licenseUrl": "https://github.com/nbarbettini/libpolyglot/blob/master/LICENSE",
+  "projectUrl": "https://github.com/nbarbettini/libpolyglot",
+  "tooling": {
+    "defaultNamespace": "Polyglot.Tests.Dnx"
+  },
+  "version": "1.0.0-beta1"
+}
