@@ -2,6 +2,7 @@
   "authors": [ "Nate Barbettini" ],
   "description": "Determine the source language of a .NET assembly",
   "dependencies": {
+    "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
     "System.Text.RegularExpressions": "4.0.11-beta-23516"
   },
   "frameworks": {

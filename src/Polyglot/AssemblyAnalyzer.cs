@@ -4,6 +4,7 @@
 
 namespace libpolyglot
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
@@ -41,13 +42,21 @@ namespace libpolyglot
 
         private static IEnumerable<AnalysisResult> Analyze(Assembly assembly)
         {
-            var referencedAssemblyNames = Enumerable.Empty<string>(); //todo
-            var internalTypeNames = assembly.DefinedTypes.Select(t => t.FullName);
+            try
+            {
+                var referencedAssemblyNames = Enumerable.Empty<string>(); //todo
+                var internalTypeNames = assembly.DefinedTypes.Select(t => t.FullName);
 
-            var analysisData = new AnalysisData(referencedAssemblyNames, internalTypeNames);
+                var analysisData = new AnalysisData(referencedAssemblyNames, internalTypeNames);
 
-            var runner = new HeuristicRunner(HeuristicProvider.GetAll());
-            return runner.GetResults(analysisData);
+                var runner = new HeuristicRunner(HeuristicProvider.GetAll());
+                return runner.GetResults(analysisData);
+            }
+            catch (Exception e)
+            {
+                // log?
+                return null;
+            }
         }
     }
 }
