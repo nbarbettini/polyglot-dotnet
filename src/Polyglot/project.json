@@ -1,10 +1,7 @@
 {
   "authors": [ "Nate Barbettini" ],
   "description": "Determine the source language of a .NET assembly",
-  "dependencies": {
-    "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
-    "System.Text.RegularExpressions": "4.0.11-beta-23516"
-  },
+  "dependencies": { },
   "frameworks": {
     "net451": { },
     "dotnet5.4": {
@@ -12,7 +9,8 @@
         "Microsoft.CSharp": "4.0.1-beta-23516",
         "System.Collections": "4.0.11-beta-23516",
         "System.Linq": "4.0.1-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516"
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Text.RegularExpressions": "4.0.11-beta-23516"
       }
     }
   },
