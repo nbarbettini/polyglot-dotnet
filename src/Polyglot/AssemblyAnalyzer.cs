@@ -41,9 +41,10 @@ namespace libpolyglot
 
         private static IEnumerable<AnalysisResult> Analyze(Assembly assembly)
         {
-            var analysisData = new AnalysisData(
-                assembly.GetReferencedAssemblies().Select(x => x.Name),
-                assembly.GetTypes().Select(t => t.FullName));
+            var referencedAssemblyNames = Enumerable.Empty<string>(); //todo
+            var internalTypeNames = assembly.DefinedTypes.Select(t => t.FullName);
+
+            var analysisData = new AnalysisData(referencedAssemblyNames, internalTypeNames);
 
             var runner = new HeuristicRunner(HeuristicProvider.GetAll());
             return runner.GetResults(analysisData);
