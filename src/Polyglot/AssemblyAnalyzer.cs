@@ -1,8 +1,8 @@
 ﻿// <copyright file="AssemblyAnalyzer.cs" company="Nate Barbettini">
-// Copyright (c) 2015 Nate Barbettini. Licensed under MIT.
+// Copyright (c) Nate Barbettini. Licensed under MIT.
 // </copyright>
 
-namespace libpolyglot
+namespace Polyglot
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -12,14 +12,16 @@ namespace libpolyglot
     /// <inheritdoc/>
     public sealed class AssemblyAnalyzer : IAssemblyAnalyzer
     {
+        private readonly bool failSilently;
         private readonly List<AnalysisResult> results;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AssemblyAnalyzer"/> class based on the given assembly.
         /// </summary>
         /// <param name="assemblyToAnalyze">The assembly to analyze.</param>
-        public AssemblyAnalyzer(Assembly assemblyToAnalyze)
+        public AssemblyAnalyzer(Assembly assemblyToAnalyze, bool failSilently = true)
         {
+            this.failSilently = failSilently;
             this.results = Analyze(assemblyToAnalyze).ToList();
         }
 
@@ -39,14 +41,32 @@ namespace libpolyglot
             return source?.Aggregate((l, r) => l.Score > r.Score ? l : r).Language;
         }
 
-        private static IEnumerable<AnalysisResult> Analyze(Assembly assembly)
+        private IEnumerable<AnalysisResult> Analyze(Assembly assembly)
         {
-            var analysisData = new AnalysisData(
-                assembly.GetReferencedAssemblies().Select(x => x.Name),
-                assembly.GetTypes().Select(t => t.FullName));
+            try
+            {
+                var internalTypeNames = assembly.DefinedTypes.Select(t => t.FullName);
 
-            var runner = new HeuristicRunner(HeuristicProvider.GetAll());
-            return runner.GetResults(analysisData);
+#if NET451
+                var referencedAssemblyNames = assembly.GetReferencedAssemblies().Select(x => x.Name);
+#else
+                var referencedAssemblyNames = Enumerable.Empty<string>(); // not currently supported :(
+#endif
+
+                var analysisData = new AnalysisData(referencedAssemblyNames, internalTypeNames);
+
+                var runner = new HeuristicRunner(HeuristicProvider.GetAll());
+                return runner.GetResults(analysisData);
+            }
+            catch
+            {
+                if (this.failSilently)
+                {
+                    return null;
+                }
+
+                throw;
+            }
         }
     }
 }

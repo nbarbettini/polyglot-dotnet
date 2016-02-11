@@ -1,8 +1,8 @@
 ﻿// <copyright file="HeuristicProvider.cs" company="Nate Barbettini">
-// Copyright (c) 2015 Nate Barbettini. Licensed under MIT.
+// Copyright (c) Nate Barbettini. Licensed under MIT.
 // </copyright>
 
-namespace libpolyglot.Heuristics
+namespace Polyglot.Heuristics
 {
     using System;
     using System.Collections.Generic;
@@ -20,7 +20,8 @@ namespace libpolyglot.Heuristics
                     typeof(CsharpHeuristics),
                     typeof(FsharpHeuristics),
                 }
-                .SelectMany(t => t.GetFields(BindingFlags.Public | BindingFlags.Static))
+                .SelectMany(t => t.GetTypeInfo().DeclaredFields)
+                .Where(f => f.IsPublic && f.IsStatic)
                 .Select(f => (IHeuristic)f.GetValue(null))
                 .ToList();
             });

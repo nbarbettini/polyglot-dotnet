@@ -1,8 +1,8 @@
 ﻿// <copyright file="IHeuristic.cs" company="Nate Barbettini">
-// Copyright (c) 2015 Nate Barbettini. Licensed under MIT.
+// Copyright (c) Nate Barbettini. Licensed under MIT.
 // </copyright>
 
-namespace libpolyglot.Heuristics
+namespace Polyglot.Heuristics
 {
     /// <summary>
     /// Represents a heuristic that analyzes indicators for a specific language.

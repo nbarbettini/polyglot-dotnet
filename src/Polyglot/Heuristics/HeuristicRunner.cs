@@ -1,8 +1,8 @@
 ﻿// <copyright file="HeuristicRunner.cs" company="Nate Barbettini">
-// Copyright (c) 2015 Nate Barbettini. Licensed under MIT.
+// Copyright (c) Nate Barbettini. Licensed under MIT.
 // </copyright>
 
-namespace libpolyglot.Heuristics
+namespace Polyglot.Heuristics
 {
     using System.Collections.Generic;
     using System.Linq;
