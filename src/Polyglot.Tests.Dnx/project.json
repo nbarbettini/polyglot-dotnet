@@ -19,8 +19,8 @@
       }
     }
   },
-  "licenseUrl": "https://github.com/nbarbettini/libpolyglot/blob/master/LICENSE",
-  "projectUrl": "https://github.com/nbarbettini/libpolyglot",
+  "licenseUrl": "https://github.com/nbarbettini/polyglot-dotnet/blob/master/LICENSE",
+  "projectUrl": "https://github.com/nbarbettini/polyglot-dotnet",
   "tooling": {
     "defaultNamespace": "Polyglot.Tests.Dnx"
   },
