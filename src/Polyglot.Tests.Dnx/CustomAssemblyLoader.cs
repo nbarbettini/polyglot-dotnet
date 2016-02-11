@@ -5,6 +5,7 @@
 using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace Polyglot.Tests
 {
@@ -29,7 +30,7 @@ namespace Polyglot.Tests
 
             protected override Assembly Load(AssemblyName assemblyName)
             {
-                string assemblyPath = Path.Combine(Directory.GetCurrentDirectory(), "..\\SampleTestAssemblies", fileName);
+                string assemblyPath = Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, "..\\SampleTestAssemblies", fileName);
                 return LoadFromAssemblyPath(assemblyPath);
             }
         }

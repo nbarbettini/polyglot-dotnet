@@ -1,7 +1,10 @@
 version: 1.0.0.{build}
 os: Visual Studio 2015
 install:
-- ps: dnvm install 1.0.0-rc1-update1
+- ps: >-
+    dnvm install 1.0.0-rc1-update1
+
+    dnvm use default -r coreclr
 cache: C:\Users\appveyor\.dnx\packages
 before_build:
 - ps: >-
@@ -11,7 +14,4 @@ before_build:
 build:
   verbosity: minimal
 test_script:
-- ps: >-
-    dnx -p src/Polyglot.Tests.Dnx test
-
-    %xunit20%\xunit.console.x86 .\Polyglot.Tests.Net451\bin\Debug\Polyglot.Tests.Net451.dll -appveyor
+- ps: .\test.ps1
