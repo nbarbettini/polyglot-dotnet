@@ -13,25 +13,28 @@ namespace Polyglot.Heuristics
 
     internal static class CsharpHeuristics
     {
-        public static IHeuristic MicrosoftCSharpLibraryReference =
-            new BooleanHeuristic(nameof(MicrosoftCSharpLibraryReference), Language.CSharp,
-                data => data.ReferencedAssemblyNames.Contains("Microsoft.CSharp"));
+        public static IHeuristic MicrosoftCSharpLibraryReference = new BooleanHeuristic(
+            nameof(MicrosoftCSharpLibraryReference),
+            Language.CSharp,
+            data => data.ReferencedAssemblyNames.Contains("Microsoft.CSharp"));
 
         // <>__AnonType0`2
         private static readonly Regex CompilerGeneratedTypeName
             = new Regex("<>.*__");
 
-        public static IHeuristic CompilerGeneratedType =
-            new BooleanHeuristic(nameof(CompilerGeneratedType), Language.CSharp,
-                data => data.InternalTypeNames.Any(t => CompilerGeneratedTypeName.IsMatch(t)));
+        public static IHeuristic CompilerGeneratedType = new BooleanHeuristic(
+            nameof(CompilerGeneratedType),
+            Language.CSharp,
+            data => data.InternalTypeNames.Any(t => CompilerGeneratedTypeName.IsMatch(t)));
 
         // EmptyCS.Program+<WaitAsync>c__async0
         private static readonly Regex StateMachineGeneratedTypeName
             = new Regex(".*\\+<.*>.__");
 
-        public static IHeuristic StateMachineGeneratedType =
-            new BooleanHeuristic(nameof(StateMachineGeneratedType), Language.CSharp,
-                data => data.InternalTypeNames.Any(t => StateMachineGeneratedTypeName.IsMatch(t)));
+        public static IHeuristic StateMachineGeneratedType = new BooleanHeuristic(
+            nameof(StateMachineGeneratedType),
+            Language.CSharp,
+            data => data.InternalTypeNames.Any(t => StateMachineGeneratedTypeName.IsMatch(t)));
     }
 
 #pragma warning restore SA1401 // Fields must be private
