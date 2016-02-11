@@ -2,6 +2,7 @@ version: 1.0.0.{build}
 os: Visual Studio 2015
 install:
 - ps: dnvm install 1.0.0-rc1-update1
+cache: C:\Users\appveyor\.dnx\packages
 before_build:
 - ps: >-
     dnu restore
@@ -11,11 +12,6 @@ build:
   verbosity: minimal
 test_script:
 - ps: >-
-    cd .\src\Polyglot.Tests.Dnx
+    dnx -p src/Polyglot.Tests.Dnx test
 
-    dnx test
-
-
-    cd ..\
-
-    %xunit20%\xunit.console.x86 .\Polyglot.Tests.Net451\bin\Debug\Polyglot.Tests.Net451.dll" -appveyor
+    %xunit20%\xunit.console.x86 .\Polyglot.Tests.Net451\bin\Debug\Polyglot.Tests.Net451.dll -appveyor
