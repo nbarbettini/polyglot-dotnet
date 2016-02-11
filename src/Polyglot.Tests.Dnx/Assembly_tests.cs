@@ -1,5 +1,5 @@
 ﻿// <copyright file="Assembly_tests.cs" company="Nate Barbettini">
-// Copyright (c) 2015 Nate Barbettini. Licensed under MIT.
+// Copyright (c) Nate Barbettini. Licensed under MIT.
 // </copyright>
 
 #if NET451

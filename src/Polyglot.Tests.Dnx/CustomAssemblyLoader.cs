@@ -1,5 +1,5 @@
 ﻿// <copyright file="CustomAssemblyLoader.cs" company="Nate Barbettini">
-// Copyright (c) 2015 Nate Barbettini. Licensed under MIT.
+// Copyright (c) Nate Barbettini. Licensed under MIT.
 // </copyright>
 
 using System.IO;
