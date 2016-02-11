@@ -1,7 +1,7 @@
 version: 1.0.0.{build}
 os: Visual Studio 2015
 install:
-- ps: dnvm install 1.0.0-rc1-update1
+- ps: dnvm install 1.0.0-rc1-update1 -r coreclr -arch x86
 cache: C:\Users\appveyor\.dnx\packages
 before_build:
 - ps: >-
