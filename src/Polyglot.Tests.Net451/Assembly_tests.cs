@@ -56,7 +56,7 @@ namespace libpolyglot.Tests
 
             protected override Assembly Load(AssemblyName assemblyName)
             {
-                string assemblyPath = Path.Combine(Directory.GetCurrentDirectory(), "TestAssemblies", fileName);
+                string assemblyPath = Path.Combine(Directory.GetCurrentDirectory(), "..\\SampleTestAssemblies", fileName);
                 return LoadFromAssemblyPath(assemblyPath);
             }
         }
