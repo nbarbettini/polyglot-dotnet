@@ -14,11 +14,11 @@
       }
     }
   },
-  "licenseUrl": "https://github.com/nbarbettini/libpolyglot/blob/master/LICENSE",
-  "projectUrl": "https://github.com/nbarbettini/libpolyglot",
+  "licenseUrl": "https://github.com/nbarbettini/polyglot-dotnet/blob/master/LICENSE",
+  "projectUrl": "https://github.com/nbarbettini/polyglot-dotnet",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nbarbettini/libpolyglot"
+    "url": "https://github.com/nbarbettini/polyglot-dotnet"
   },
   "tags": [ "reflection", "diagnostics" ],
   "title": "Polyglot",
