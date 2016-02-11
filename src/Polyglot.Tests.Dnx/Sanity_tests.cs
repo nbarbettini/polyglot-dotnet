@@ -6,7 +6,7 @@ using System.Reflection;
 using FluentAssertions;
 using Xunit;
 
-namespace libpolyglot.Tests
+namespace Polyglot.Tests
 {
     public class Sanity_tests
     {

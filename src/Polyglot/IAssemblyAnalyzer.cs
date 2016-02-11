@@ -2,7 +2,7 @@
 // Copyright (c) 2015 Nate Barbettini. Licensed under MIT.
 // </copyright>
 
-namespace libpolyglot
+namespace Polyglot
 {
     using System.Collections.Generic;
 

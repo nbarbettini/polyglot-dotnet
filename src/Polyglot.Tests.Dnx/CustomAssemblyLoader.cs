@@ -6,7 +6,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
 
-namespace libpolyglot.Tests
+namespace Polyglot.Tests
 {
     public static class CustomAssemblyLoader
     {

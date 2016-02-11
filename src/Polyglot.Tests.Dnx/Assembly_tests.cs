@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using FluentAssertions;
 using Xunit;
 
-namespace libpolyglot.Tests
+namespace Polyglot.Tests
 {
     public class Assembly_tests
     {
