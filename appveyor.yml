@@ -3,6 +3,9 @@ os: Visual Studio 2015
 install:
 - ps: dnvm install 1.0.0-rc1-update1
 before_build:
-- ps: dnu restore
+- ps: >-
+    dnu restore
+
+    nuget restore
 build:
   verbosity: minimal
