@@ -12,5 +12,3 @@ before_build:
     nuget restore
 build:
   verbosity: minimal
-test_script:
-- ps: .\test.ps1

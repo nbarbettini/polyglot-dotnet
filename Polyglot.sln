@@ -9,6 +9,11 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Polyglot.Tests.Dnx", "src\P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polyglot.Tests.Net451", "src\Polyglot.Tests.Net451\Polyglot.Tests.Net451.csproj", "{2B25D487-D5C0-4020-8F1B-D554FE2B2365}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BC1C9818-02D9-4EDB-9FF5-24D583FEF89B}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
