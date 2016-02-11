@@ -7,11 +7,11 @@ Polyglot is a small library that will attempt to determine the original source l
 Polyglot supports these platforms:
 
 * .NET Framework 4.5.1 and higher
-* CoreCLR/DNX (or any dotnet5.1/netstandard1.0 platform)
+* CoreCLR/DNX (or any `dotnet5.1`/`netstandard1.0` platform)
 
 Polyglot includes heuristics for code written in these languages:
 * C#
-* VB.NET *(only on desktop .NET, currently!)
+* VB.NET *(only on CLR .NET, currently!)*
 * F#
 
 ## Caveats caveats caveats
@@ -49,4 +49,4 @@ var analyzer = new AssemblyAnalyzer(assembly);
 
 This library is based on [a StackOverflow answer](http://stackoverflow.com/questions/33161188/how-to-detect-which-net-language-is-calling-my-code) I wrote that attempted to do the same thing. I was surprised that nothing else existed, so I took some hints from [other](http://stackoverflow.com/questions/15184802/decompiled-dll-clues-to-help-tell-whether-it-was-c-sharp-or-vb-net) [questions](http://stackoverflow.com/q/7310331/3191599) and built a proof-of-concept.
 
-It's solidly in the realm of "trickery that doesn't always work" (see caveats, above). But, works well enough for me to use for some rudimentary reporting in the [Stormpath.SDK](https://github.com/stormpath/stormpath-sdk-dotnet) library, which I maintain.
+It's solidly in the realm of "trickery that doesn't always work" (see caveats, above). But, works well enough for me to use for some rudimentary diagnostic reporting in the [Stormpath.SDK](https://github.com/stormpath/stormpath-sdk-dotnet) library, which I maintain.
