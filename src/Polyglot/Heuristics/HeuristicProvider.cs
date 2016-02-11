@@ -20,7 +20,8 @@ namespace Polyglot.Heuristics
                     typeof(CsharpHeuristics),
                     typeof(FsharpHeuristics),
                 }
-                .SelectMany(t => t.GetFields(BindingFlags.Public | BindingFlags.Static))
+                .SelectMany(t => t.GetTypeInfo().DeclaredFields)
+                .Where(f => f.IsPublic && f.IsStatic)
                 .Select(f => (IHeuristic)f.GetValue(null))
                 .ToList();
             });

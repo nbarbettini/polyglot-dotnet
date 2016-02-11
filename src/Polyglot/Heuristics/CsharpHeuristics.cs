@@ -19,7 +19,7 @@ namespace Polyglot.Heuristics
 
         // <>__AnonType0`2
         private static readonly Regex CompilerGeneratedTypeName
-            = new Regex("<>.*__", RegexOptions.Compiled);
+            = new Regex("<>.*__");
 
         public static IHeuristic CompilerGeneratedType =
             new BooleanHeuristic(nameof(CompilerGeneratedType), Language.CSharp,
@@ -27,7 +27,7 @@ namespace Polyglot.Heuristics
 
         // EmptyCS.Program+<WaitAsync>c__async0
         private static readonly Regex StateMachineGeneratedTypeName
-            = new Regex(".*\\+<.*>.__", RegexOptions.Compiled);
+            = new Regex(".*\\+<.*>.__");
 
         public static IHeuristic StateMachineGeneratedType =
             new BooleanHeuristic(nameof(StateMachineGeneratedType), Language.CSharp,
