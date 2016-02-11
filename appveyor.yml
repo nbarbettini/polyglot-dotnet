@@ -9,3 +9,13 @@ before_build:
     nuget restore
 build:
   verbosity: minimal
+test_script:
+- ps: >-
+    cd .\src\Polyglot.Tests.Dnx
+
+    dnx test
+
+
+    cd ..\
+
+    %xunit20%\xunit.console.x86 .\Polyglot.Tests.Net451\bin\Debug\Polyglot.Tests.Net451.dll" -appveyor
