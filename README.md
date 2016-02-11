@@ -1,4 +1,4 @@
-# polygot-dotnet
+# polygot-dotnet [![Build status](https://ci.appveyor.com/api/projects/status/e308mu0mxv009d7h/branch/master?svg=true)](https://ci.appveyor.com/project/nbarbettini/polyglot-dotnet/branch/master)
 
 Polyglot is a small library that will attempt to determine the original source language of a compiled CLI (.NET) assembly.
 
