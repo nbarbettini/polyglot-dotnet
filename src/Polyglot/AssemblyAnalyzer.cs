@@ -4,6 +4,7 @@
 
 namespace Polyglot
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
@@ -13,7 +14,7 @@ namespace Polyglot
     public sealed class AssemblyAnalyzer : IAssemblyAnalyzer
     {
         private readonly bool failSilently;
-        private readonly List<AnalysisResult> results;
+        private readonly Lazy<List<AnalysisResult>> results;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AssemblyAnalyzer"/> class based on the given assembly.
@@ -22,14 +23,14 @@ namespace Polyglot
         public AssemblyAnalyzer(Assembly assemblyToAnalyze, bool failSilently = true)
         {
             this.failSilently = failSilently;
-            this.results = Analyze(assemblyToAnalyze).ToList();
+            this.results = new Lazy<List<AnalysisResult>>(() => Analyze(assemblyToAnalyze).ToList());
         }
 
         /// <inheritdoc/>
-        public IReadOnlyList<AnalysisResult> AllResults => this.results;
+        public IReadOnlyList<AnalysisResult> AllResults => this.results.Value;
 
         /// <inheritdoc/>
-        public Language? DetectedLanguage => TopScore(this.results);
+        public Language? DetectedLanguage => TopScore(this.results.Value);
 
         private static Language? TopScore(IList<AnalysisResult> source)
         {
