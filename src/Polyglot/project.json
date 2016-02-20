@@ -1,7 +1,7 @@
 {
   "authors": [ "Nate Barbettini" ],
-  "description": "Determine the source language of a .NET assembly",
   "dependencies": { },
+  "description": "Determine the source language of a .NET assembly",
   "frameworks": {
     "net451": { },
     "dotnet5.1": {
@@ -25,5 +25,5 @@
   "tooling": {
     "defaultNamespace": "Polyglot"
   },
-  "version": "1.0.0-beta1"
+  "version": "1.0.0"
 }
