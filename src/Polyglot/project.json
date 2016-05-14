@@ -3,7 +3,7 @@
   "dependencies": { },
   "description": "Determine the source language of a .NET assembly",
   "frameworks": {
-    "net451": { },
+    "net45": { },
     "dotnet5.1": {
       "dependencies": {
         "Microsoft.CSharp": "4.0.1-beta-23516",
@@ -25,5 +25,5 @@
   "tooling": {
     "defaultNamespace": "Polyglot"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
