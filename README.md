@@ -11,7 +11,7 @@ Polyglot supports these platforms:
 
 Polyglot includes heuristics for code written in these languages:
 * C#
-* VB.NET *(only on CLR .NET, currently!)*
+* VB.NET *(only on desktop .NET, currently!)*
 * F#
 
 ## Caveats caveats caveats
@@ -32,7 +32,7 @@ Incorrect results could occur if:
 var assembly = this.GetType().GetTypeInfo().Assembly;
 
 // Analyze the calling assembly. Cool!
-// (Only works on CLR .NET)
+// (Only works on desktop .NET)
 var assembly = Assembly.GetCallingAssembly();
 
 // Analyze an assembly from disk.
