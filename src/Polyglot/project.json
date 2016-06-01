@@ -4,26 +4,23 @@
   "description": "Determine the source language of a .NET assembly",
   "frameworks": {
     "net45": { },
-    "dotnet5.1": {
+    "netstandard1.0": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.1-beta-23516",
-        "System.Collections": "4.0.11-beta-23516",
-        "System.Linq": "4.0.1-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516",
-        "System.Text.RegularExpressions": "4.0.11-beta-23516"
+        "NETStandard.Library": "1.5.0-rc2-24027"
       }
     }
   },
-  "licenseUrl": "https://github.com/nbarbettini/polyglot-dotnet/blob/master/LICENSE",
-  "projectUrl": "https://github.com/nbarbettini/polyglot-dotnet",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nbarbettini/polyglot-dotnet"
+  "packOptions": {
+    "licenseUrl": "https://github.com/nbarbettini/polyglot-dotnet/blob/master/LICENSE",
+    "projectUrl": "https://github.com/nbarbettini/polyglot-dotnet",
+    "repository": {
+      "url": "https://github.com/nbarbettini/polyglot-dotnet"
+    },
+    "tags": [ "reflection", "diagnostics" ]
   },
-  "tags": [ "reflection", "diagnostics" ],
   "title": "Polyglot",
   "tooling": {
     "defaultNamespace": "Polyglot"
   },
-  "version": "1.0.1"
+  "version": "1.1.0-beta1"
 }
