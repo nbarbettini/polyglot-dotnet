@@ -9,7 +9,7 @@
     },
     "Polyglot": {
       "target": "project",
-      "version": "1.2.0-beta1"
+      "version": "1.2.0"
     },
     "xunit": "2.1.0"
   },
@@ -27,5 +27,5 @@
   "tooling": {
     "defaultNamespace": "Polyglot.Tests.Dnx"
   },
-  "version": "1.2.0-beta1"
+  "version": "1.2.0"
 }
