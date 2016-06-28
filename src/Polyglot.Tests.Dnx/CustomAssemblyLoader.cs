@@ -5,7 +5,6 @@
 using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
-using Microsoft.Extensions.PlatformAbstractions;
 
 namespace Polyglot.Tests
 {
