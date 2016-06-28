@@ -30,7 +30,7 @@ namespace Polyglot.Tests
 
             protected override Assembly Load(AssemblyName assemblyName)
             {
-                string assemblyPath = Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, "..\\SampleTestAssemblies", fileName);
+                string assemblyPath = Path.Combine(Directory.GetCurrentDirectory(), "..\\SampleTestAssemblies", fileName);
                 return LoadFromAssemblyPath(assemblyPath);
             }
         }

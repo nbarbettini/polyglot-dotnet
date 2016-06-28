@@ -1,16 +1,16 @@
 {
   "authors": [ "Nate Barbettini" ],
   "dependencies": {
-    "dotnet-test-xunit": "1.0.0-rc2-build10025",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
     "FluentAssertions": "4.2.2",
     "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc2-final",
     "Microsoft.NETCore.App": {
       "type": "platform",
-      "version": "1.0.0-rc2-3002702"
+      "version": "1.0.0"
     },
     "Polyglot": {
       "target": "project",
-      "version": "1.1.0"
+      "version": "1.2.0-beta1"
     },
     "xunit": "2.1.0"
   },
@@ -28,5 +28,5 @@
   "tooling": {
     "defaultNamespace": "Polyglot.Tests.Dnx"
   },
-  "version": "1.1.0"
+  "version": "1.2.0-beta1"
 }

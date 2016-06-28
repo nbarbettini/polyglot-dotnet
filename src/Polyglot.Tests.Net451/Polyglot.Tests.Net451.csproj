@@ -42,8 +42,9 @@
       <HintPath>..\..\packages\FluentAssertions.4.2.2\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Polyglot">
-      <HintPath>..\artifacts\bin\Polyglot\Debug\net451\Polyglot.dll</HintPath>
+    <Reference Include="Polyglot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Polyglot\bin\Debug\net45\Polyglot.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
